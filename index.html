@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice the Beasties — Privacy Policy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0f0a1a;
+            --card: #1a1230;
+            --card-alt: #221845;
+            --accent: #7c5cfc;
+            --accent-light: #a78bfa;
+            --pink: #f472b6;
+            --green: #34d399;
+            --text: #e8e0f5;
+            --text-dim: #9890ad;
+            --border: #2d2445;
+            --radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Animated gradient background */
+        .bg-glow {
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(124,92,252,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(244,114,182,0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 50%, rgba(52,211,153,0.04) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-3%, 3%) rotate(3deg); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 48px 0 32px;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #7c5cfc, #f472b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 8px 32px rgba(124,92,252,0.3);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-light), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p.subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 24px 0 32px;
+        }
+
+        .lang-btn {
+            padding: 10px 28px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--card);
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--pink));
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(124,92,252,0.35);
+        }
+
+        /* Sections */
+        .content { display: none; }
+        .content.active { display: block; }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .icon {
+            font-size: 1.3rem;
+        }
+
+        .section p, .section li {
+            color: var(--text);
+            font-size: 0.93rem;
+            line-height: 1.75;
+        }
+
+        .section ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .section li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: var(--card-alt);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+
+        .highlight-box.green {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box.pink {
+            border-left-color: var(--pink);
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--accent-light);
+        }
+
+        .highlight-box.green strong {
+            color: var(--green);
+        }
+
+        .highlight-box.pink strong {
+            color: var(--pink);
+        }
+
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--pink);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px 0 16px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 12px;
+        }
+
+        footer a {
+            color: var(--accent-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 16px 14px 40px; }
+            .section { padding: 20px 18px 18px; }
+            header h1 { font-size: 1.5rem; }
+            header { padding: 32px 0 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="container">
+
+        <header>
+            <div class="app-icon">⚔️</div>
+            <h1>Slice the Beasties</h1>
+            <p class="subtitle">Privacy Policy / Política de Privacidade</p>
+        </header>
+
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="switchLang('en')">🇺🇸 English</button>
+            <button class="lang-btn" onclick="switchLang('pt')">🇧🇷 Português</button>
+        </div>
+
+        <!-- ENGLISH -->
+        <div id="lang-en" class="content active">
+
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Last updated: June 1, 2026 &nbsp;·&nbsp; Effective: June 1, 2026</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👋</span> Welcome</h2>
+                <p>Thank you for playing <strong>Slice the Beasties</strong>! This Privacy Policy explains how we handle information when you use our game. We are committed to protecting your privacy and being transparent about our practices.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📋</span> Information We Collect</h2>
+                <p><strong>Automatically collected via Google AdMob:</strong></p>
+                <ul>
+                    <li>Device identifiers (advertising ID)</li>
+                    <li>Device information (type, OS version, screen size)</li>
+                    <li>Network information (carrier, ISP)</li>
+                    <li>General location (country/region level only — not precise)</li>
+                    <li>Ad interaction data (views, clicks)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ We do NOT collect:</strong> Name, email, phone number, precise location, gameplay data, payment info, or access to camera/microphone.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🎯</span> How Information Is Used</h2>
+                <p>AdMob data is used solely to:</p>
+                <ul>
+                    <li>Display relevant advertisements within the game</li>
+                    <li>Measure ad effectiveness and viewability</li>
+                    <li>Prevent ad fraud</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>We do not sell, share, or rent any personal information to third parties.</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔗</span> Third-Party Services</h2>
+                <p><strong>Google AdMob</strong> — Advertising platform. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+                <p style="margin-top:8px;">You can opt out of personalized ads:</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Settings → Google → Ads → Enable "Opt out of Ads Personalization"</p>
+                </div>
+                <p style="margin-top:12px;"><strong>Google Play Services</strong> — <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👶</span> Children's Privacy</h2>
+                <p>Slice the Beasties is a general-audience game and is <strong>not directed at children under 13</strong>. We do not knowingly collect personal information from children. If you believe your child has provided personal information, please <a href="mailto:svfungames@gmail.com">contact us</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔒</span> Data Retention & Security</h2>
+                <p>We do not retain any user data on our servers. AdMob data retention follows <a href="https://support.google.com/admob/answer/6223274" target="_blank">Google's data retention policies</a>.</p>
+                <p style="margin-top:8px;">We take reasonable measures to protect information, though no method of electronic transmission is 100% secure.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔄</span> Changes to This Policy</h2>
+                <p>We may update this policy periodically. Changes will be posted here with an updated date. Continued use constitutes acceptance.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contact</h2>
+                <p>Questions or concerns? Reach us at:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Slice the Beasties (com.svgames.slicethebeasties)</p>
+            </div>
+        </div>
+
+        <!-- PORTUGUÊS -->
+        <div id="lang-pt" class="content">
+
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Última atualização: 1 de junho de 2026 &nbsp;·&nbsp; Vigência: 1 de junho de 2026</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👋</span> Bem-vindo</h2>
+                <p>Obrigado por jogar <strong>Slice the Beasties</strong>! Esta Política de Privacidade explica como tratamos informações quando você utiliza nosso jogo. Estamos comprometidos em proteger sua privacidade e ser transparentes sobre nossas práticas.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📋</span> Informações que Coletamos</h2>
+                <p><strong>Coletadas automaticamente via Google AdMob:</strong></p>
+                <ul>
+                    <li>Identificadores do dispositivo (ID de publicidade)</li>
+                    <li>Informações do dispositivo (tipo, versão do SO, tamanho da tela)</li>
+                    <li>Informações de rede (operadora, provedor)</li>
+                    <li>Localização geral (país/região — não precisa)</li>
+                    <li>Dados de interação com anúncios (visualizações, cliques)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ NÃO coletamos:</strong> Nome, e-mail, telefone, localização precisa, dados de gameplay, informações de pagamento, ou acesso à câmera/microfone.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🎯</span> Como as Informações São Utilizadas</h2>
+                <p>Dados do AdMob são utilizados exclusivamente para:</p>
+                <ul>
+                    <li>Exibir anúncios relevantes dentro do jogo</li>
+                    <li>Medir eficácia e visibilidade dos anúncios</li>
+                    <li>Prevenir fraudes de publicidade</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Não vendemos, compartilhamos ou alugamos nenhuma informação pessoal a terceiros.</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔗</span> Serviços de Terceiros</h2>
+                <p><strong>Google AdMob</strong> — Plataforma de publicidade. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade do Google</a></p>
+                <p style="margin-top:8px;">Você pode desativar anúncios personalizados:</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Configurações → Google → Anúncios → Ativar "Desativar personalização de anúncios"</p>
+                </div>
+                <p style="margin-top:12px;"><strong>Google Play Services</strong> — <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade do Google</a></p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👶</span> Privacidade de Crianças</h2>
+                <p>O Slice the Beasties é um jogo de audiência geral e <strong>não é direcionado a crianças menores de 13 anos</strong>. Não coletamos intencionalmente informações pessoais de crianças. Se acredita que seu filho forneceu informações pessoais, <a href="mailto:svfungames@gmail.com">entre em contato</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔒</span> Retenção de Dados e Segurança</h2>
+                <p>Não retemos dados de usuário em nossos servidores. A retenção de dados do AdMob segue as <a href="https://support.google.com/admob/answer/6223274" target="_blank">políticas de retenção do Google</a>.</p>
+                <p style="margin-top:8px;">Tomamos medidas razoáveis para proteger informações, embora nenhum método de transmissão eletrônica seja 100% seguro.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔄</span> Alterações nesta Política</h2>
+                <p>Podemos atualizar esta política periodicamente. Alterações serão publicadas aqui com data atualizada. O uso continuado do jogo constitui aceitação das mudanças.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contato</h2>
+                <p>Dúvidas ou preocupações? Entre em contato:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Slice the Beasties (com.svgames.slicethebeasties)</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 SVGames &nbsp;·&nbsp; <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById('lang-' + lang).classList.add('active');
+            
+            const idx = lang === 'en' ? 0 : 1;
+            document.querySelectorAll('.lang-btn')[idx].classList.add('active');
+            
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+        }
+    </script>
+</body>
+</html>
