@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Wise — Privacy Policy / Política de Privacidade</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #120b1e;
+            --card: #1c1230;
+            --card-alt: #241a3d;
+            --accent: #d4a017;
+            --accent-light: #f0c75e;
+            --gold: #ffd700;
+            --purple: #8b5cf6;
+            --green: #34d399;
+            --text: #ece4f5;
+            --text-dim: #9a8fb0;
+            --border: #2e2445;
+            --radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Animated gradient background */
+        .bg-glow {
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(212,160,23,0.10) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(139,92,246,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.05) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-3%, 3%) rotate(3deg); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 48px 0 28px;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #d4a017, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 8px 32px rgba(212,160,23,0.3);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p.subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 24px 0 32px;
+        }
+
+        .lang-btn {
+            padding: 9px 20px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--card);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(212,160,23,0.35);
+        }
+
+        /* Sections */
+        .content { display: none; }
+        .content.active { display: block; }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .icon {
+            font-size: 1.3rem;
+        }
+
+        .section p, .section li {
+            color: var(--text);
+            font-size: 0.93rem;
+            line-height: 1.75;
+        }
+
+        .section ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .section li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: var(--card-alt);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+
+        .highlight-box.green {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box.purple {
+            border-left-color: var(--purple);
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--accent-light);
+        }
+
+        .highlight-box.green strong {
+            color: var(--green);
+        }
+
+        .highlight-box.purple strong {
+            color: var(--purple);
+        }
+
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px 0 16px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 12px;
+        }
+
+        footer a {
+            color: var(--accent-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 16px 14px 40px; }
+            .section { padding: 20px 18px 18px; }
+            header h1 { font-size: 1.5rem; }
+            header { padding: 32px 0 24px; }
+            .lang-btn { padding: 8px 14px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="container">
+
+        <header>
+            <div class="app-icon">📖</div>
+            <h1>Bible Wise</h1>
+            <p class="subtitle">Privacy Policy · Política de Privacidade · Politique de Confidentialité · Política de Privacidad · Politique de Confidentialité</p>
+        </header>
+
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="switchLang('pt-BR')">🇧🇷 Português (BR)</button>
+            <button class="lang-btn" onclick="switchLang('pt-PT')">🇵🇹 Português (PT)</button>
+            <button class="lang-btn" onclick="switchLang('en')">🇺🇸 English</button>
+            <button class="lang-btn" onclick="switchLang('es')">🇪🇸 Español</button>
+            <button class="lang-btn" onclick="switchLang('fr')">🇫🇷 Français</button>
+        </div>
+
+        <!-- ============ PORTUGUÊS (BR) ============ -->
+        <div id="lang-pt-BR" class="content active">
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Última atualização: 11 de agosto de 2026 &nbsp;·&nbsp; Vigência: 11 de agosto de 2026</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👋</span> Bem-vindo</h2>
+                <p>Obrigado por jogar <strong>Bible Wise</strong>! Esta Política de Privacidade explica como tratamos as informações quando você utiliza nosso jogo. Estamos comprometidos em proteger sua privacidade e ser transparentes sobre nossas práticas.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">📋</span> Informações que Coletamos</h2>
+                <p><strong>1. Conta e progresso (via Nakama):</strong></p>
+                <ul>
+                    <li>Identificador de dispositivo (ID anônimo gerado pelo jogo)</li>
+                    <li>Progresso do jogo: moedas, XP, nível, títulos, avatares, estatísticas</li>
+                    <li>Pontuações de ranking (leaderboards)</li>
+                </ul>
+                <p><strong>2. Login com Google (opcional):</strong></p>
+                <ul>
+                    <li>Nome de exibição e e-mail (apenas se você optar por entrar com Google)</li>
+                </ul>
+                <p><strong>3. Coletadas automaticamente via Google AdMob:</strong></p>
+                <ul>
+                    <li>Identificadores do dispositivo (ID de publicidade)</li>
+                    <li>Informações do dispositivo (tipo, versão do SO, tamanho da tela)</li>
+                    <li>Informações de rede (operadora, provedor)</li>
+                    <li>Localização geral (país/região — não precisa)</li>
+                    <li>Dados de interação com anúncios (visualizações, cliques)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ NÃO coletamos:</strong> Número de telefone, localização precisa, informações de pagamento, ou acesso à câmera/microfone. O login com Google é opcional — você pode jogar como visitante sem fornecer dados pessoais.</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🎯</span> Como as Informações São Utilizadas</h2>
+                <ul>
+                    <li><strong>Progresso e conta:</strong> sincronizar seu progresso entre dispositivos, exibir rankings e permitir login</li>
+                    <li><strong>AdMob:</strong> exibir anúncios relevantes, medir eficácia e prevenir fraudes</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Não vendemos, compartilhamos ou alugamos nenhuma informação pessoal a terceiros.</strong></p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔗</span> Serviços de Terceiros</h2>
+                <p><strong>Nakama (servidor de jogos)</strong> — hospedado na Oracle Cloud. Armazena progresso e rankings. <a href="https://heroiclabs.com/privacy/" target="_blank">Política da Heroic Labs</a></p>
+                <p style="margin-top:8px;"><strong>Google Sign-In</strong> — autenticação opcional. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade do Google</a></p>
+                <p style="margin-top:8px;"><strong>Google AdMob</strong> — plataforma de publicidade. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade do Google</a></p>
+                <p style="margin-top:8px;">Você pode desativar anúncios personalizados:</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Configurações → Google → Anúncios → Ativar "Desativar personalização de anúncios"</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👶</span> Privacidade de Crianças</h2>
+                <p>O Bible Wise é um jogo de trivia bíblica de audiência geral e <strong>não é direcionado a crianças menores de 13 anos</strong>. Não coletamos intencionalmente informações pessoais de crianças. Se acredita que seu filho forneceu informações pessoais, <a href="mailto:svfungames@gmail.com">entre em contato</a>.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔒</span> Retenção de Dados e Segurança</h2>
+                <p>Seus dados de progresso são armazenados no servidor Nakama enquanto sua conta estiver ativa. Você pode solicitar a exclusão dos seus dados a qualquer momento. A retenção de dados do AdMob segue as <a href="https://support.google.com/admob/answer/6223274" target="_blank">políticas de retenção do Google</a>.</p>
+                <p style="margin-top:8px;">Tomamos medidas razoáveis para proteger informações, embora nenhum método de transmissão eletrônica seja 100% seguro.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔄</span> Alterações nesta Política</h2>
+                <p>Podemos atualizar esta política periodicamente. Alterações serão publicadas aqui com data atualizada. O uso continuado do jogo constitui aceitação das mudanças.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contato</h2>
+                <p>Dúvidas ou preocupações? Entre em contato:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Bible Wise (com.svfungames.biblewise)</p>
+            </div>
+        </div>
+
+        <!-- ============ PORTUGUÊS (PT) ============ -->
+        <div id="lang-pt-PT" class="content">
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Última atualização: 11 de agosto de 2026 &nbsp;·&nbsp; Vigência: 11 de agosto de 2026</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👋</span> Bem-vindo</h2>
+                <p>Obrigado por jogar <strong>Bible Wise</strong>! Esta Política de Privacidade explica como tratamos as informações quando utiliza o nosso jogo. Estamos empenhados em proteger a sua privacidade e ser transparentes sobre as nossas práticas.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">📋</span> Informações que Recolhemos</h2>
+                <p><strong>1. Conta e progresso (via Nakama):</strong></p>
+                <ul>
+                    <li>Identificador do dispositivo (ID anónimo gerado pelo jogo)</li>
+                    <li>Progresso do jogo: moedas, XP, nível, títulos, avatares, estatísticas</li>
+                    <li>Pontuações de classificação (leaderboards)</li>
+                </ul>
+                <p><strong>2. Início de sessão com Google (opcional):</strong></p>
+                <ul>
+                    <li>Nome de exibição e e-mail (apenas se optar por entrar com Google)</li>
+                </ul>
+                <p><strong>3. Recolhidas automaticamente via Google AdMob:</strong></p>
+                <ul>
+                    <li>Identificadores do dispositivo (ID de publicidade)</li>
+                    <li>Informações do dispositivo (tipo, versão do SO, tamanho do ecrã)</li>
+                    <li>Informações de rede (operadora, fornecedor)</li>
+                    <li>Localização geral (país/região — não precisa)</li>
+                    <li>Dados de interação com anúncios (visualizações, cliques)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ NÃO recolhemos:</strong> Número de telefone, localização precisa, informações de pagamento, ou acesso à câmara/microfone. O início de sessão com Google é opcional — pode jogar como visitante sem fornecer dados pessoais.</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🎯</span> Como as Informações São Utilizadas</h2>
+                <ul>
+                    <li><strong>Progresso e conta:</strong> sincronizar o seu progresso entre dispositivos, exibir classificações e permitir início de sessão</li>
+                    <li><strong>AdMob:</strong> exibir anúncios relevantes, medir eficácia e prevenir fraudes</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Não vendemos, partilhamos ou alugamos nenhuma informação pessoal a terceiros.</strong></p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔗</span> Serviços de Terceiros</h2>
+                <p><strong>Nakama (servidor de jogos)</strong> — alojado na Oracle Cloud. Armazena progresso e classificações. <a href="https://heroiclabs.com/privacy/" target="_blank">Política da Heroic Labs</a></p>
+                <p style="margin-top:8px;"><strong>Google Sign-In</strong> — autenticação opcional. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade do Google</a></p>
+                <p style="margin-top:8px;"><strong>Google AdMob</strong> — plataforma de publicidade. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade do Google</a></p>
+                <p style="margin-top:8px;">Pode desativar anúncios personalizados:</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Definições → Google → Anúncios → Ativar "Desativar personalização de anúncios"</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👶</span> Privacidade de Crianças</h2>
+                <p>O Bible Wise é um jogo de trivia bíblica de audiência geral e <strong>não é direcionado a crianças menores de 13 anos</strong>. Não recolhemos intencionalmente informações pessoais de crianças. Se acredita que o seu filho forneceu informações pessoais, <a href="mailto:svfungames@gmail.com">entre em contacto</a>.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔒</span> Retenção de Dados e Segurança</h2>
+                <p>Os seus dados de progresso são armazenados no servidor Nakama enquanto a sua conta estiver ativa. Pode solicitar a eliminação dos seus dados a qualquer momento. A retenção de dados do AdMob segue as <a href="https://support.google.com/admob/answer/6223274" target="_blank">políticas de retenção do Google</a>.</p>
+                <p style="margin-top:8px;">Tomamos medidas razoáveis para proteger informações, embora nenhum método de transmissão eletrónica seja 100% seguro.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔄</span> Alterações nesta Política</h2>
+                <p>Podemos atualizar esta política periodicamente. As alterações serão publicadas aqui com data atualizada. O uso continuado do jogo constitui aceitação das mudanças.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contacto</h2>
+                <p>Dúvidas ou preocupações? Entre em contacto:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Bible Wise (com.svfungames.biblewise)</p>
+            </div>
+        </div>
+
+        <!-- ============ ENGLISH ============ -->
+        <div id="lang-en" class="content">
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Last updated: August 11, 2026 &nbsp;·&nbsp; Effective: August 11, 2026</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👋</span> Welcome</h2>
+                <p>Thank you for playing <strong>Bible Wise</strong>! This Privacy Policy explains how we handle information when you use our game. We are committed to protecting your privacy and being transparent about our practices.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">📋</span> Information We Collect</h2>
+                <p><strong>1. Account and progress (via Nakama):</strong></p>
+                <ul>
+                    <li>Device identifier (anonymous ID generated by the game)</li>
+                    <li>Game progress: coins, XP, level, titles, avatars, statistics</li>
+                    <li>Leaderboard scores</li>
+                </ul>
+                <p><strong>2. Google Sign-In (optional):</strong></p>
+                <ul>
+                    <li>Display name and email (only if you choose to sign in with Google)</li>
+                </ul>
+                <p><strong>3. Automatically collected via Google AdMob:</strong></p>
+                <ul>
+                    <li>Device identifiers (advertising ID)</li>
+                    <li>Device information (type, OS version, screen size)</li>
+                    <li>Network information (carrier, ISP)</li>
+                    <li>General location (country/region level only — not precise)</li>
+                    <li>Ad interaction data (views, clicks)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ We do NOT collect:</strong> Phone number, precise location, payment info, or access to camera/microphone. Google Sign-In is optional — you can play as a guest without providing personal data.</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🎯</span> How Information Is Used</h2>
+                <ul>
+                    <li><strong>Progress and account:</strong> sync your progress across devices, display leaderboards, and enable sign-in</li>
+                    <li><strong>AdMob:</strong> display relevant ads, measure effectiveness, and prevent ad fraud</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>We do not sell, share, or rent any personal information to third parties.</strong></p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔗</span> Third-Party Services</h2>
+                <p><strong>Nakama (game server)</strong> — hosted on Oracle Cloud. Stores progress and leaderboards. <a href="https://heroiclabs.com/privacy/" target="_blank">Heroic Labs Policy</a></p>
+                <p style="margin-top:8px;"><strong>Google Sign-In</strong> — optional authentication. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+                <p style="margin-top:8px;"><strong>Google AdMob</strong> — advertising platform. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+                <p style="margin-top:8px;">You can opt out of personalized ads:</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Settings → Google → Ads → Enable "Opt out of Ads Personalization"</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👶</span> Children's Privacy</h2>
+                <p>Bible Wise is a general-audience Bible trivia game and is <strong>not directed at children under 13</strong>. We do not knowingly collect personal information from children. If you believe your child has provided personal information, please <a href="mailto:svfungames@gmail.com">contact us</a>.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔒</span> Data Retention & Security</h2>
+                <p>Your progress data is stored on the Nakama server while your account is active. You can request deletion of your data at any time. AdMob data retention follows <a href="https://support.google.com/admob/answer/6223274" target="_blank">Google's data retention policies</a>.</p>
+                <p style="margin-top:8px;">We take reasonable measures to protect information, though no method of electronic transmission is 100% secure.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔄</span> Changes to This Policy</h2>
+                <p>We may update this policy periodically. Changes will be posted here with an updated date. Continued use constitutes acceptance.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contact</h2>
+                <p>Questions or concerns? Reach us at:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Bible Wise (com.svfungames.biblewise)</p>
+            </div>
+        </div>
+
+        <!-- ============ ESPAÑOL ============ -->
+        <div id="lang-es" class="content">
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Última actualización: 11 de agosto de 2026 &nbsp;·&nbsp; Vigencia: 11 de agosto de 2026</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👋</span> Bienvenido</h2>
+                <p>¡Gracias por jugar <strong>Bible Wise</strong>! Esta Política de Privacidad explica cómo tratamos la información cuando utilizas nuestro juego. Estamos comprometidos a proteger tu privacidad y ser transparentes sobre nuestras prácticas.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">📋</span> Información que Recopilamos</h2>
+                <p><strong>1. Cuenta y progreso (vía Nakama):</strong></p>
+                <ul>
+                    <li>Identificador del dispositivo (ID anónimo generado por el juego)</li>
+                    <li>Progreso del juego: monedas, XP, nivel, títulos, avatares, estadísticas</li>
+                    <li>Puntuaciones de clasificación (leaderboards)</li>
+                </ul>
+                <p><strong>2. Inicio de sesión con Google (opcional):</strong></p>
+                <ul>
+                    <li>Nombre para mostrar y correo electrónico (solo si eliges iniciar sesión con Google)</li>
+                </ul>
+                <p><strong>3. Recopiladas automáticamente vía Google AdMob:</strong></p>
+                <ul>
+                    <li>Identificadores del dispositivo (ID de publicidad)</li>
+                    <li>Información del dispositivo (tipo, versión del SO, tamaño de pantalla)</li>
+                    <li>Información de red (operador, proveedor)</li>
+                    <li>Ubicación general (país/región — no precisa)</li>
+                    <li>Datos de interacción con anuncios (vistas, clics)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ NO recopilamos:</strong> Número de teléfono, ubicación precisa, información de pago, o acceso a cámara/micrófono. El inicio de sesión con Google es opcional — puedes jugar como invitado sin proporcionar datos personales.</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🎯</span> Cómo se Utiliza la Información</h2>
+                <ul>
+                    <li><strong>Progreso y cuenta:</strong> sincronizar tu progreso entre dispositivos, mostrar clasificaciones y permitir inicio de sesión</li>
+                    <li><strong>AdMob:</strong> mostrar anuncios relevantes, medir eficacia y prevenir fraudes</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>No vendemos, compartimos ni alquilamos ninguna información personal a terceros.</strong></p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔗</span> Servicios de Terceros</h2>
+                <p><strong>Nakama (servidor de juegos)</strong> — alojado en Oracle Cloud. Almacena progreso y clasificaciones. <a href="https://heroiclabs.com/privacy/" target="_blank">Política de Heroic Labs</a></p>
+                <p style="margin-top:8px;"><strong>Google Sign-In</strong> — autenticación opcional. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a></p>
+                <p style="margin-top:8px;"><strong>Google AdMob</strong> — plataforma de publicidad. <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a></p>
+                <p style="margin-top:8px;">Puedes desactivar los anuncios personalizados:</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Configuración → Google → Anuncios → Activar "Desactivar personalización de anuncios"</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👶</span> Privacidad de los Niños</h2>
+                <p>Bible Wise es un juego de trivia bíblica de audiencia general y <strong>no está dirigido a niños menores de 13 años</strong>. No recopilamos intencionalmente información personal de niños. Si crees que tu hijo ha proporcionado información personal, <a href="mailto:svfungames@gmail.com">contáctanos</a>.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔒</span> Retención de Datos y Seguridad</h2>
+                <p>Tus datos de progreso se almacenan en el servidor Nakama mientras tu cuenta esté activa. Puedes solicitar la eliminación de tus datos en cualquier momento. La retención de datos de AdMob sigue las <a href="https://support.google.com/admob/answer/6223274" target="_blank">políticas de retención de Google</a>.</p>
+                <p style="margin-top:8px;">Tomamos medidas razonables para proteger la información, aunque ningún método de transmisión electrónica es 100% seguro.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔄</span> Cambios en esta Política</h2>
+                <p>Podemos actualizar esta política periódicamente. Los cambios se publicarán aquí con fecha actualizada. El uso continuado del juego constituye aceptación de los cambios.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contacto</h2>
+                <p>¿Preguntas o inquietudes? Contáctanos:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Bible Wise (com.svfungames.biblewise)</p>
+            </div>
+        </div>
+
+        <!-- ============ FRANÇAIS ============ -->
+        <div id="lang-fr" class="content">
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Dernière mise à jour : 11 août 2026 &nbsp;·&nbsp; En vigueur : 11 août 2026</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👋</span> Bienvenue</h2>
+                <p>Merci de jouer à <strong>Bible Wise</strong> ! Cette Politique de Confidentialité explique comment nous traitons les informations lorsque vous utilisez notre jeu. Nous nous engageons à protéger votre vie privée et à être transparents sur nos pratiques.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">📋</span> Informations que Nous Collectons</h2>
+                <p><strong>1. Compte et progression (via Nakama) :</strong></p>
+                <ul>
+                    <li>Identifiant de l'appareil (ID anonyme généré par le jeu)</li>
+                    <li>Progression du jeu : pièces, XP, niveau, titres, avatars, statistiques</li>
+                    <li>Scores des classements (leaderboards)</li>
+                </ul>
+                <p><strong>2. Connexion avec Google (facultatif) :</strong></p>
+                <ul>
+                    <li>Nom d'affichage et e-mail (uniquement si vous choisissez de vous connecter avec Google)</li>
+                </ul>
+                <p><strong>3. Collectées automatiquement via Google AdMob :</strong></p>
+                <ul>
+                    <li>Identifiants de l'appareil (ID de publicité)</li>
+                    <li>Informations sur l'appareil (type, version de l'OS, taille de l'écran)</li>
+                    <li>Informations réseau (opérateur, fournisseur)</li>
+                    <li>Localisation générale (pays/région — pas précise)</li>
+                    <li>Données d'interaction avec les annonces (vues, clics)</li>
+                </ul>
+                <div class="highlight-box green">
+                    <p><strong>✅ Nous ne collectons PAS :</strong> Numéro de téléphone, localisation précise, informations de paiement, ou accès à la caméra/microphone. La connexion avec Google est facultative — vous pouvez jouer en tant qu'invité sans fournir de données personnelles.</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🎯</span> Comment les Informations Sont Utilisées</h2>
+                <ul>
+                    <li><strong>Progression et compte :</strong> synchroniser votre progression entre appareils, afficher les classements et permettre la connexion</li>
+                    <li><strong>AdMob :</strong> afficher des annonces pertinentes, mesurer l'efficacité et prévenir la fraude publicitaire</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Nous ne vendons, ne partageons ni ne louons aucune information personnelle à des tiers.</strong></p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔗</span> Services Tiers</h2>
+                <p><strong>Nakama (serveur de jeu)</strong> — hébergé sur Oracle Cloud. Stocke la progression et les classements. <a href="https://heroiclabs.com/privacy/" target="_blank">Politique de Heroic Labs</a></p>
+                <p style="margin-top:8px;"><strong>Google Sign-In</strong> — authentification facultative. <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité de Google</a></p>
+                <p style="margin-top:8px;"><strong>Google AdMob</strong> — plateforme publicitaire. <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité de Google</a></p>
+                <p style="margin-top:8px;">Vous pouvez désactiver les annonces personnalisées :</p>
+                <div class="highlight-box">
+                    <p><strong>Android</strong> → Paramètres → Google → Annonces → Activer "Désactiver la personnalisation des annonces"</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2><span class="icon">👶</span> Confidentialité des Enfants</h2>
+                <p>Bible Wise est un jeu de quiz biblique destiné à un public général et <strong>n'est pas destiné aux enfants de moins de 13 ans</strong>. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Si vous pensez que votre enfant a fourni des informations personnelles, <a href="mailto:svfungames@gmail.com">contactez-nous</a>.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔒</span> Conservation des Données et Sécurité</h2>
+                <p>Vos données de progression sont stockées sur le serveur Nakama tant que votre compte est actif. Vous pouvez demander la suppression de vos données à tout moment. La conservation des données d'AdMob suit les <a href="https://support.google.com/admob/answer/6223274" target="_blank">politiques de conservation de Google</a>.</p>
+                <p style="margin-top:8px;">Nous prenons des mesures raisonnables pour protéger les informations, bien qu'aucune méthode de transmission électronique ne soit 100 % sécurisée.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">🔄</span> Modifications de cette Politique</h2>
+                <p>Nous pouvons mettre à jour cette politique périodiquement. Les modifications seront publiées ici avec une date mise à jour. L'utilisation continue du jeu constitue une acceptation des changements.</p>
+            </div>
+            <div class="section">
+                <h2><span class="icon">✉️</span> Contact</h2>
+                <p>Des questions ou des préoccupations ? Contactez-nous :</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App : Bible Wise (com.svfungames.biblewise)</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 SV Fun Games &nbsp;·&nbsp; <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.querySelector('.lang-btn[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
