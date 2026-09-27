@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favo: Hexa Color Sort — Privacy Policy / Política de Privacidade</title>
+    <meta name="description" content="Privacy Policy for Favo: Hexa Color Sort by SV Fun Games. Política de Privacidade do Favo: Hexa Color Sort.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0d0a12;
+            --card: #17121f;
+            --card-alt: #211a2e;
+            --accent: #f0a01e;
+            --accent-light: #ffc45e;
+            --honey: #ffd166;
+            --comb: #e08c00;
+            --green: #34d399;
+            --text: #f2ead9;
+            --text-dim: #a89b86;
+            --border: #2e2438;
+            --radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Animated gradient background */
+        .bg-glow {
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(240,160,30,0.10) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(255,209,102,0.07) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 50%, rgba(52,211,153,0.04) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-3%, 3%) rotate(3deg); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 48px 0 28px;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #f0a01e, #ffd166);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 8px 32px rgba(240,160,30,0.3);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--honey), var(--comb));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p.subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 24px 0 32px;
+        }
+
+        .lang-btn {
+            padding: 9px 20px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--card);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--honey));
+            border-color: transparent;
+            color: #1a1206;
+            box-shadow: 0 4px 16px rgba(240,160,30,0.35);
+        }
+
+        /* Sections */
+        .content { display: none; }
+        .content.active { display: block; }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .icon {
+            font-size: 1.3rem;
+        }
+
+        .section p, .section li {
+            color: var(--text);
+            font-size: 0.93rem;
+            line-height: 1.75;
+        }
+
+        .section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin: 14px 0 6px;
+        }
+
+        .section ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .section li {
+            margin-bottom: 6px;
+        }
+
+        .section code {
+            background: var(--card-alt);
+            border-radius: 6px;
+            padding: 1px 6px;
+            font-size: 0.85rem;
+        }
+
+        .highlight-box {
+            background: var(--card-alt);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+
+        .highlight-box.green {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--accent-light);
+        }
+
+        .highlight-box.green strong {
+            color: var(--green);
+        }
+
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--honey);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px 0 16px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 12px;
+        }
+
+        footer a {
+            color: var(--accent-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 16px 14px 40px; }
+            .section { padding: 20px 18px 18px; }
+            header h1 { font-size: 1.45rem; }
+            header { padding: 32px 0 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="container">
+
+        <header>
+            <div class="app-icon">🍯</div>
+            <h1>Favo: Hexa Color Sort</h1>
+            <p class="subtitle">Privacy Policy / Política de Privacidade</p>
+        </header>
+
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="switchLang('en')">🇺🇸 English</button>
+            <button class="lang-btn" onclick="switchLang('pt')">🇧🇷 Português</button>
+        </div>
+
+        <!-- ================= ENGLISH ================= -->
+        <div id="lang-en" class="content active">
+
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Effective: September 27, 2026</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📝</span> In Short</h2>
+                <ul>
+                    <li>The game has no sign-up, login or account. We never ask for your name, email or phone number.</li>
+                    <li>We run no servers: your progress stays on your device.</li>
+                    <li>The game shows ads from Google AdMob. Google collects some device data to serve and measure those ads, as explained below.</li>
+                    <li>You control ad personalization, in the game (where the law requires it) and in your Android settings.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👋</span> 1. Who We Are</h2>
+                <p><strong>Favo: Hexa Color Sort</strong> (shown on your device as “Favo”; package <code>com.svfungames.favo</code>) is developed and published by <strong>SV Fun Games</strong> (“we”). We are responsible for the game and for decisions about the data it processes, under Brazil’s General Data Protection Law (Law No. 13,709/2018, “LGPD”) and, for users in Europe, the General Data Protection Regulation (“GDPR”).</p>
+                <p style="margin-top:10px;">Contact: <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📱</span> 2. Data That Stays on Your Device</h2>
+                <p>To work, the game stores in the app’s private storage on your device:</p>
+                <ul>
+                    <li>your progress: completed levels, stars, pollen, records and daily challenges;</li>
+                    <li>your preferences: sound, music, vibration, animations and language.</li>
+                </ul>
+                <p>This data is never sent to us or to third parties. It is deleted when you uninstall the game or clear the app’s data in Android settings. The game does not take part in Android’s automatic backup.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📺</span> 3. Advertising (Google AdMob)</h2>
+                <p>Favo is free and supported by ads: full-screen ads between levels and rewarded videos that you choose to watch (for example, “Double pollen”). Ads are provided by <strong>Google AdMob</strong> (Google LLC and, in the European Economic Area and the UK, Google Ireland Limited).</p>
+                <p style="margin-top:10px;">Google’s ads SDK, which runs inside the game, may automatically collect:</p>
+                <ul>
+                    <li>your device’s advertising ID and app set ID;</li>
+                    <li>your IP address, from which an approximate location may be estimated (city or region, never your exact location);</li>
+                    <li>device and system information, such as model, Android version, language and connection type;</li>
+                    <li>interactions with ads, such as impressions, taps and videos watched;</li>
+                    <li>diagnostic and performance data about the SDK itself.</li>
+                </ul>
+                <p>This data is used to serve and measure ads, limit how often the same ad repeats, prevent fraud and abuse and, only with your consent where the law requires it, show personalized ads. We do not receive this data in a form that identifies you: Google processes it under its own policies:</p>
+                <ul>
+                    <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a></li>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">✅</span> 4. Consent and Your Choices</h2>
+                <ul>
+                    <li><strong>In the game:</strong> in the European Economic Area, the UK, Switzerland and other places where the law requires it, the game asks for your consent the first time you open it, through Google’s consent tool. In those regions you can review your choice at any time in <em>Settings → Privacy</em>.</li>
+                    <li><strong>On Android:</strong> you can reset or delete your advertising ID and turn off ad personalization in your device settings (usually <em>Settings → Google → Ads</em> or <em>Settings → Privacy → Ads</em>).</li>
+                    <li><strong>With Google:</strong> you can also manage personalization in <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">My Ad Center</a>.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p>Without consent to personalization, Google may still show non-personalized ads, which use limited data for delivery, measurement and fraud prevention.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔐</span> 5. Android Permissions</h2>
+                <ul>
+                    <li><strong>Internet and network state:</strong> to load ads. The game itself works offline.</li>
+                    <li><strong>Vibration:</strong> for touch feedback on buttons. You can turn it off in <em>Settings</em>.</li>
+                    <li><strong>Advertising ID:</strong> used by AdMob, as described above.</li>
+                </ul>
+                <p>Google’s libraries also declare technical permissions, such as scheduling internal tasks of the ads SDK. None of them gives access to personal data.</p>
+                <div class="highlight-box green">
+                    <p><strong>✅ The game does NOT access</strong> your contacts, photos, files, camera, microphone or precise location.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">⚖️</span> 6. Legal Bases</h2>
+                <p>We process data based on your <strong>consent</strong>, for personalized ads where the law requires it, and on <strong>legitimate interest</strong>, for non-personalized ads, measurement, fraud prevention and security. This applies under the LGPD and, for users in Europe, under the GDPR. The game data kept on your device exists to provide the service you are using.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🤝</span> 7. Sharing</h2>
+                <p>The data described in section 3 is processed by Google as our ad provider. We do not sell personal data. We would only disclose information if required by law or by an order of a competent authority.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🌎</span> 8. International Transfers</h2>
+                <p>Google may process data outside your country, for example in the United States, with the safeguards described in its policies and permitted by the LGPD.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🗓️</span> 9. How Long We Keep Data</h2>
+                <p>Game data stays on your device until you uninstall the game or clear the app’s data. Data processed by Google follows the retention periods in Google’s privacy policy.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔒</span> 10. Security</h2>
+                <p>Game data lives in the app’s private storage, protected by Android’s app sandbox. Communication between the ads SDK and Google is encrypted.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👶</span> 11. Children</h2>
+                <p>Favo is not directed to children under 13. We do not knowingly collect personal data from children. If you are a parent or guardian and believe a child has used the game, write to <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a>: we will help you reset the device’s advertising ID and ask Google to delete the ad data.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📜</span> 12. Your Rights</h2>
+                <p>Under the LGPD you have the right to confirm that processing takes place, to access, correct, anonymize, block or delete unnecessary data, to portability, to information about sharing, to withdraw consent and to complain to Brazil’s data protection authority (ANPD). Users in Europe have equivalent rights under the GDPR, including the right to complain to their local data protection authority.</p>
+                <p style="margin-top:10px;">Because we keep none of your data on servers, requests about ad data are handled by Google (links in section 3), and you can delete game data directly on your device. If you need help with any request, write to <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔄</span> 13. Changes to This Policy</h2>
+                <p>If this policy changes, the new version will be published at this address with an updated effective date. Important changes will also be announced on the game’s Google Play page.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">✉️</span> 14. Contact</h2>
+                <p>Questions or concerns? Reach us at:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Favo: Hexa Color Sort (com.svfungames.favo)</p>
+            </div>
+        </div>
+
+        <!-- ================= PORTUGUÊS ================= -->
+        <div id="lang-pt" class="content">
+
+            <div class="section">
+                <p style="text-align:center; color:var(--text-dim); font-size:0.9rem;">Vigente a partir de 27 de setembro de 2026.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📝</span> Em Resumo</h2>
+                <ul>
+                    <li>O jogo não tem cadastro, login nem conta. Não pedimos seu nome, e-mail ou telefone.</li>
+                    <li>Não temos servidores: o seu progresso fica só no seu aparelho.</li>
+                    <li>O jogo exibe anúncios do Google AdMob. O Google coleta alguns dados do aparelho para mostrar e medir esses anúncios, como explicado abaixo.</li>
+                    <li>Você controla a personalização dos anúncios, no jogo (onde a lei exige) e nas configurações do Android.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👋</span> 1. Quem Somos</h2>
+                <p>O aplicativo <strong>Favo: Hexa Color Sort</strong> (no aparelho, “Favo”; pacote <code>com.svfungames.favo</code>) é desenvolvido e publicado pela <strong>SV Fun Games</strong> (“nós”). Somos os responsáveis pelo jogo e pelas decisões sobre os dados que ele trata, nos termos da Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018, “LGPD”).</p>
+                <p style="margin-top:10px;">Contato: <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📱</span> 2. Dados que Ficam Só no Seu Aparelho</h2>
+                <p>Para o jogo funcionar, ele guarda no armazenamento privado do aplicativo, dentro do seu aparelho:</p>
+                <ul>
+                    <li>o seu progresso: fases concluídas, estrelas, pólen, recordes e desafios diários;</li>
+                    <li>as suas preferências: som, música, vibração, animações e idioma.</li>
+                </ul>
+                <p>Esses dados não são enviados para nós nem para terceiros. Eles são apagados quando você desinstala o jogo ou limpa os dados do aplicativo nas configurações do Android. O jogo não participa do backup automático do Android.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📺</span> 3. Anúncios (Google AdMob)</h2>
+                <p>O Favo é gratuito e se mantém com anúncios: anúncios de tela cheia entre as fases e vídeos com recompensa que você escolhe assistir (por exemplo, “Dobrar pólen”). Os anúncios são fornecidos pelo <strong>Google AdMob</strong> (Google LLC e, no Espaço Econômico Europeu e no Reino Unido, Google Ireland Limited).</p>
+                <p style="margin-top:10px;">O SDK de anúncios do Google, que roda dentro do jogo, pode coletar automaticamente:</p>
+                <ul>
+                    <li>o identificador de publicidade do aparelho e o identificador de conjunto de apps;</li>
+                    <li>o endereço IP, do qual pode ser estimada uma localização aproximada (cidade ou região, nunca a localização exata);</li>
+                    <li>informações do aparelho e do sistema, como modelo, versão do Android, idioma e tipo de conexão;</li>
+                    <li>interações com os anúncios, como exibições, toques e vídeos assistidos;</li>
+                    <li>dados de diagnóstico e desempenho do próprio SDK.</li>
+                </ul>
+                <p>Esses dados são usados para exibir e medir os anúncios, limitar a repetição do mesmo anúncio, prevenir fraude e abuso e, somente com o seu consentimento quando a lei exige, mostrar anúncios personalizados. Nós não recebemos esses dados de forma que identifique você: quem os trata é o Google, conforme as políticas dele:</p>
+                <ul>
+                    <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Como o Google usa informações de sites ou apps que usam os serviços dele</a></li>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">✅</span> 4. Consentimento e Suas Escolhas</h2>
+                <ul>
+                    <li><strong>No jogo:</strong> no Espaço Econômico Europeu, no Reino Unido, na Suíça e em outros lugares onde a lei exige, o jogo pede o seu consentimento na primeira abertura, pela ferramenta de consentimento do Google. Nessas regiões você pode rever a sua escolha a qualquer momento em <em>Ajustes → Privacidade</em>.</li>
+                    <li><strong>No Android:</strong> você pode redefinir ou excluir o seu identificador de publicidade e desativar a personalização de anúncios nas configurações do aparelho (em geral, <em>Configurações → Google → Anúncios</em> ou <em>Configurações → Privacidade → Anúncios</em>).</li>
+                    <li><strong>No Google:</strong> você também pode gerenciar a personalização em <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Minha Central de Anúncios</a>.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p>Sem consentimento para personalização, o Google ainda pode mostrar anúncios não personalizados, que usam dados limitados para entrega, medição e prevenção de fraude.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔐</span> 5. Permissões do Android</h2>
+                <ul>
+                    <li><strong>Internet e estado da rede:</strong> para carregar os anúncios. O jogo em si funciona sem internet.</li>
+                    <li><strong>Vibração:</strong> para o retorno tátil ao tocar nos botões. Pode ser desligada em <em>Ajustes</em>.</li>
+                    <li><strong>Identificador de publicidade:</strong> usado pelo AdMob, como descrito acima.</li>
+                </ul>
+                <p>As bibliotecas do Google também declaram permissões técnicas, como agendar tarefas internas do SDK de anúncios. Nenhuma delas dá acesso a dados pessoais.</p>
+                <div class="highlight-box green">
+                    <p><strong>✅ O jogo NÃO acessa</strong> contatos, fotos, arquivos, câmera, microfone nem a sua localização exata.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">⚖️</span> 6. Bases Legais</h2>
+                <p>Tratamos dados com base no seu <strong>consentimento</strong>, para anúncios personalizados onde a lei exige, e no <strong>legítimo interesse</strong>, para anúncios não personalizados, medição, prevenção de fraude e segurança. Isso vale para a LGPD e, para quem está na Europa, para o Regulamento Geral de Proteção de Dados (RGPD/GDPR). Os dados do jogo guardados no aparelho existem para prestar o próprio serviço que você usa.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🤝</span> 7. Compartilhamento</h2>
+                <p>Os dados descritos na seção 3 são tratados pelo Google como fornecedor de anúncios. Não vendemos dados pessoais. Só divulgaríamos informações se uma lei ou ordem de autoridade competente exigisse.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🌎</span> 8. Transferência Internacional</h2>
+                <p>O Google pode tratar dados fora do Brasil, por exemplo nos Estados Unidos, com as salvaguardas previstas nas políticas dele e admitidas pela LGPD.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🗓️</span> 9. Por Quanto Tempo</h2>
+                <p>Os dados do jogo ficam no seu aparelho até você desinstalar o jogo ou limpar os dados do aplicativo. Os dados tratados pelo Google seguem os prazos da política de privacidade do Google.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔒</span> 10. Segurança</h2>
+                <p>Os dados do jogo ficam no armazenamento privado do aplicativo, protegido pelo isolamento de apps do Android. A comunicação do SDK de anúncios com o Google é criptografada.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">👶</span> 11. Crianças</h2>
+                <p>O Favo não é direcionado a crianças menores de 13 anos. Não coletamos intencionalmente dados pessoais de crianças. Se você é responsável por uma criança e acredita que ela usou o jogo, escreva para <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a>: ajudamos a redefinir o identificador de publicidade do aparelho e a solicitar ao Google a exclusão dos dados de anúncios.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">📜</span> 12. Seus Direitos</h2>
+                <p>Pela LGPD, você tem direito a confirmação da existência de tratamento, acesso, correção, anonimização, bloqueio ou eliminação de dados desnecessários, portabilidade, informação sobre compartilhamento, revogação do consentimento e reclamação à Autoridade Nacional de Proteção de Dados (ANPD). Quem está na Europa tem direitos equivalentes pelo RGPD, incluindo reclamar à autoridade de proteção de dados do seu país.</p>
+                <p style="margin-top:10px;">Como não guardamos dados seus em servidores, os pedidos sobre dados de anúncios são atendidos pelo Google (links na seção 3), e os dados do jogo você apaga direto no aparelho. Se precisar de ajuda com qualquer pedido, escreva para <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">🔄</span> 13. Alterações nesta Política</h2>
+                <p>Se esta política mudar, a nova versão será publicada neste endereço, com a data de vigência atualizada. Mudanças importantes também serão avisadas na página do jogo na Google Play.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">✉️</span> 14. Contato</h2>
+                <p>Dúvidas ou preocupações? Entre em contato:</p>
+                <p style="margin-top:8px;"><strong><a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></strong></p>
+                <p style="margin-top:4px; color:var(--text-dim);">App: Favo: Hexa Color Sort (com.svfungames.favo)</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 SV Fun Games &nbsp;·&nbsp; <a href="mailto:svfungames@gmail.com">svfungames@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('lang-' + lang).classList.add('active');
+
+            const idx = lang === 'en' ? 0 : 1;
+            document.querySelectorAll('.lang-btn')[idx].classList.add('active');
+
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+        }
+    </script>
+</body>
+</html>
